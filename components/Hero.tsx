@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, BrainCircuit, BarChart3 } from 'lucide-react';
+import { FileText, BrainCircuit, BarChart3, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 interface HeroProps {
   onStart: () => void;
@@ -7,58 +7,121 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onStart }) => {
   return (
-    <div className="bg-white">
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:py-32">
-          <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20">
-              Cập nhật mới nhất về chuẩn năng lực y khoa 2025.
-            </div>
+    <div className="relative isolate overflow-hidden bg-white">
+      {/* Decorative Background Pattern */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50/50 via-white to-white"></div>
+
+      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
+        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+          
+          {/* Badge */}
+          <div className="mt-24 sm:mt-32 lg:mt-16">
+            <a href="#" className="inline-flex space-x-6">
+              <span className="rounded-full bg-blue-600/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-600 ring-1 ring-inset ring-blue-600/10">
+                Phiên bản mới 2025
+              </span>
+              <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-slate-600 hover:text-slate-900 transition-colors">
+                <span>Cập nhật chuẩn năng lực</span>
+                <ChevronRight className="h-4 w-4 text-slate-400" />
+              </span>
+            </a>
           </div>
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-              Xây dựng Ma trận Đề thi Y khoa Chuẩn xác
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              Công cụ hỗ trợ giảng viên y khoa xây dựng blueprint (ma trận đề thi) nhanh chóng, đảm bảo tính giá trị nội dung và phân bố phù hợp theo thang đo Bloom và chuẩn năng lực.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <button
-                onClick={onStart}
-                className="rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-              >
-                Bắt đầu ngay
-              </button>
-              <a href="#" className="text-sm font-semibold leading-6 text-slate-900">
-                Tìm hiểu thêm <span aria-hidden="true">→</span>
-              </a>
-            </div>
+
+          {/* Headline */}
+          <h1 className="mt-10 text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl leading-tight">
+            Xây dựng <span className="text-blue-600">Ma trận Đề thi</span> Y khoa Chuẩn xác với AI
+          </h1>
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            Công cụ chuyên nghiệp hỗ trợ giảng viên y khoa thiết kế blueprint nhanh chóng, đảm bảo tính giá trị nội dung (content validity) và cân đối theo thang đo Bloom.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="mt-10 flex items-center gap-x-6">
+            <button
+              onClick={onStart}
+              className="rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-all hover:-translate-y-0.5"
+            >
+              Bắt đầu thiết kế ngay
+            </button>
+            <a href="#" className="text-sm font-semibold leading-6 text-slate-900 hover:text-blue-600 transition-colors">
+              Xem tài liệu hướng dẫn <span aria-hidden="true">→</span>
+            </a>
           </div>
+          
+          {/* Trust Indicators */}
+          <div className="mt-10 border-t border-slate-100 pt-8 flex gap-8">
+             <div className="flex items-center gap-2 text-sm text-slate-500">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                <span>Chuẩn Bloom</span>
+             </div>
+             <div className="flex items-center gap-2 text-sm text-slate-500">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                <span>Competency-based</span>
+             </div>
+             <div className="flex items-center gap-2 text-sm text-slate-500">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                <span>Xuất Excel</span>
+             </div>
+          </div>
+
         </div>
-        
-        {/* Feature Grid */}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-24">
-          <div className="grid grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 p-4 bg-blue-100 rounded-full text-blue-600">
-                <BrainCircuit className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Hỗ trợ bởi AI</h3>
-              <p className="text-slate-600">Tự động gợi ý phân bố câu hỏi và chủ đề con dựa trên chuyên khoa và đối tượng học viên.</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 p-4 bg-emerald-100 rounded-full text-emerald-600">
-                <FileText className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Chuẩn năng lực</h3>
-              <p className="text-slate-600">Tích hợp sẵn các khung năng lực y khoa cốt lõi để đảm bảo đề thi đánh giá đúng mục tiêu.</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="mb-4 p-4 bg-purple-100 rounded-full text-purple-600">
-                <BarChart3 className="h-8 w-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Trực quan hóa</h3>
-              <p className="text-slate-600">Biểu đồ phân bố Bloom và nội dung giúp giảng viên dễ dàng điều chỉnh độ khó.</p>
+
+        {/* Hero Image / Visuals */}
+        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+          <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+                {/* Card 1 */}
+                <div className="relative rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 hover:ring-blue-500/20 transition-all duration-300">
+                   <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-lg bg-blue-50 text-blue-600">
+                         <BrainCircuit className="w-6 h-6" />
+                      </div>
+                      <div>
+                         <h3 className="font-semibold text-slate-900">Trí tuệ nhân tạo</h3>
+                         <p className="text-sm text-slate-500">Gợi ý nội dung tự động</p>
+                      </div>
+                   </div>
+                   <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500 w-3/4"></div>
+                   </div>
+                </div>
+
+                {/* Card 2 */}
+                <div className="relative rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 hover:ring-emerald-500/20 transition-all duration-300 sm:mt-12">
+                   <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-lg bg-emerald-50 text-emerald-600">
+                         <FileText className="w-6 h-6" />
+                      </div>
+                      <div>
+                         <h3 className="font-semibold text-slate-900">Chuẩn năng lực</h3>
+                         <p className="text-sm text-slate-500">ACGME / CanMEDS frame</p>
+                      </div>
+                   </div>
+                   <div className="space-y-2">
+                      <div className="h-2 w-full bg-slate-100 rounded-full"></div>
+                      <div className="h-2 w-2/3 bg-slate-100 rounded-full"></div>
+                   </div>
+                </div>
+
+                 {/* Card 3 */}
+                 <div className="relative rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 hover:ring-purple-500/20 transition-all duration-300">
+                   <div className="flex items-center gap-4 mb-4">
+                      <div className="p-3 rounded-lg bg-purple-50 text-purple-600">
+                         <BarChart3 className="w-6 h-6" />
+                      </div>
+                      <div>
+                         <h3 className="font-semibold text-slate-900">Phân tích trực quan</h3>
+                         <p className="text-sm text-slate-500">Biểu đồ phân bố độ khó</p>
+                      </div>
+                   </div>
+                   <div className="flex items-end gap-1 h-8">
+                      <div className="w-1/4 bg-purple-200 h-full rounded-t"></div>
+                      <div className="w-1/4 bg-purple-300 h-2/3 rounded-t"></div>
+                      <div className="w-1/4 bg-purple-500 h-3/4 rounded-t"></div>
+                      <div className="w-1/4 bg-purple-600 h-1/2 rounded-t"></div>
+                   </div>
+                </div>
             </div>
           </div>
         </div>
