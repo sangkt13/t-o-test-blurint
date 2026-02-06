@@ -1,0 +1,5 @@
+{
+  "name": "MedEdu Blueprint AI",
+  "description": "Ứng dụng xây dựng ma trận đề thi (Test Blueprint) trong giáo dục y khoa dựa trên chuẩn năng lực, hỗ trợ bởi AI.",
+  "requestFramePermissions": []
+}
